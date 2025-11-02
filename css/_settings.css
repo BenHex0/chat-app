@@ -1,0 +1,65 @@
+/* src/css/components/_settings.css */
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 16px;
+    background: var(--color-header-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.settings-panel  .back-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.settings-panel .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 16px 20px;
+    gap: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.settings-panel .profile-picture.large {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+}
+
+.settings-section {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.settings-section .setting-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.settings-section .setting-item:hover {
+    background: var(--color-hover-bg);
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 15px 16px;
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 107, 107, 0.1);
+}
