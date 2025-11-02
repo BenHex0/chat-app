@@ -1,0 +1,61 @@
+/* src/css/components/_layout.css */
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: var(--color-sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--color-border);
+    z-index: 2;
+}
+
+/* --- CHAT CONTAINER --- */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-main-bg);
+    z-index: 1;
+}
+
+/* --- EMPTY STATE --- */
+.empty-state {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-chat {
+    padding: 15px 30px;
+    border-radius: 40px;
+    background-color: var(--color-hover-bg); /* Use a muted color */
+    color: var(--color-text-light);
+    font-weight: 600;
+    user-select: none;
+}
+
+/* --- SETTINGS PANEL (Base Layout) --- */
+.settings-panel {
+    width: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--color-sidebar-bg);
+    color: var(--color-text-light);
+    z-index: 3;
+
+    /* Transition for slide effect */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-panel.active {
+    transform: translateX(0);
+}
