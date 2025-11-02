@@ -1,0 +1,21 @@
+/* src/css/base/_variables.css */
+
+:root {
+    /* --- Cyber Blue Palette --- */
+    --color-main-bg: #1a2330; /* Deepest background */
+    --color-sidebar-bg: #242e3d; /* Sidebar panel */
+    --color-header-bg: #2b3545; /* Header/secondary surface */
+    --color-input-bg: #1e2836; /* Input field background */
+
+    --color-accent: #115a7c; /* Primary interactive color (Cyber Blue) */
+    --color-accent-hover: #4a90e2; /* Lighter accent for hover */
+    --color-danger: #ff6b6b; /* Logout/delete */
+
+    --color-text-light: #e0e6f0; /* Standard foreground text */
+    --color-text-mute: #8b97a3; /* Placeholder/muted text */
+
+    --color-border: #3a4452; /* Subtle border/divider line */
+    --color-hover-bg: #354050; /* Chat item hover background */
+    --color-bubble-sent: #0088cc; /* Received message bubble color */
+    --color-bubble-received: #2b3545; /* Received message bubble color */
+}
