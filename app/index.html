@@ -4,15 +4,32 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Chat App Demo</title>
-        <link rel="stylesheet" href="css/mobile/styles.css" />
+        <link rel="stylesheet" href="css/app/styles.css" />
     </head>
     <body>
    
         <div class="sidebar">
             <div class="sidebar-header">
                 <div class="profile-picture" id="settings">U</div>
-                <label class="username">Username</label>
+                <label class="username" id="username">Username</label>
             </div>
+
+            <button class="add-contact-btn" id="openModal">
+                + Add Contact
+            </button>
+
+            
+           <!-- Add Contact Modal -->
+            <div class="modal" id="contactModal">
+                <div class="modal-content">
+                    <h3>Add Contact</h3>
+                    <input type="text" id="contactName" placeholder="Username" autocomplete="off" />
+                    <div id="recommendations" class="recommendations"></div>
+                    <button id="addContact">Add</button>
+                    <button class="close-btn" id="closeModal">Cancel</button>
+                </div>
+            </div>
+
 
             <div class="chat-list">
                 <div class="chats" id="chatContainer"></div>
@@ -76,6 +93,10 @@
             </div>
         </div> -->
  
+        <script src="js/getUser.js"></script>
+        <script src="js/getUserContacts.js"></script>
+        <script src="js/addContact.js"></script>
+        <script src="js/getMessages.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

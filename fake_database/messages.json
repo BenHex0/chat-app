@@ -1,0 +1,592 @@
+{
+    "conversations": [
+        {
+            "users": [
+                "testuser",
+                "james"
+            ],
+            "messages": [
+                {
+                    "from": "testuser",
+                    "text": "Hey James!"
+                },
+                {
+                    "from": "james",
+                    "text": "Hi! How are you?"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "testuser",
+                    "text": "ok"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "james",
+                    "text": "You are Ugly!"
+                },
+                {
+                    "from": "testuser",
+                    "text": "shut up"
+                },
+                {
+                    "from": "testuser",
+                    "text": "good bye"
+                },
+                {
+                    "from": "testuser",
+                    "text": "fuck you"
+                }
+            ]
+        },
+        {
+            "users": [
+                "testuser",
+                "steven"
+            ],
+            "messages": [
+                {
+                    "from": "steven",
+                    "text": "Yo testuser!"
+                },
+                {
+                    "from": "testuser",
+                    "text": "Hey, what's up?"
+                },
+                {
+                    "from": "testuser",
+                    "text": "you are ugly"
+                },
+                {
+                    "from": "testuser",
+                    "text": "shut up"
+                },
+                {
+                    "from": "testuser",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no you fuck"
+                },
+                {
+                    "from": "testuser",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "testuser",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "testuser",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "testuser",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no fuck you"
+                },
+                {
+                    "from": "testuser",
+                    "text": "hello"
+                },
+                {
+                    "from": "steven",
+                    "text": "no you hello"
+                },
+                {
+                    "from": "steven",
+                    "text": "go away"
+                },
+                {
+                    "from": "testuser",
+                    "text": "no you go away"
+                },
+                {
+                    "from": "testuser",
+                    "text": "shut up"
+                },
+                {
+                    "from": "steven",
+                    "text": "you ugly"
+                },
+                {
+                    "from": "testuser",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "steven",
+                    "text": "no fuck you"
+                }
+            ]
+        },
+        {
+            "users": [
+                "testuser",
+                "hitler"
+            ],
+            "messages": [
+                {
+                    "from": "hitler",
+                    "text": "Hello!"
+                },
+                {
+                    "from": "testuser",
+                    "text": "Hi there!"
+                },
+                {
+                    "from": "hitler",
+                    "text": "fuck jews"
+                },
+                {
+                    "from": "testuser",
+                    "text": "yes fuck jews"
+                },
+                {
+                    "from": "hitler",
+                    "text": "hello world"
+                },
+                {
+                    "from": "testuser",
+                    "text": "bye world"
+                }
+            ]
+        },
+        {
+            "users": [
+                "alice",
+                "james"
+            ],
+            "messages": [
+                {
+                    "from": "alice",
+                    "text": "Hey James, how are you?"
+                },
+                {
+                    "from": "james",
+                    "text": "Good, thanks!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "alice",
+                "steven"
+            ],
+            "messages": [
+                {
+                    "from": "steven",
+                    "text": "Hey Alice!"
+                },
+                {
+                    "from": "alice",
+                    "text": "Hi Steven!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "alice",
+                "hitler"
+            ],
+            "messages": [
+                {
+                    "from": "hitler",
+                    "text": "Hi Alice"
+                },
+                {
+                    "from": "alice",
+                    "text": "Hello!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "a",
+                "james"
+            ],
+            "messages": [
+                {
+                    "from": "a",
+                    "text": "Hey James"
+                },
+                {
+                    "from": "james",
+                    "text": "Hello!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "a",
+                "steven"
+            ],
+            "messages": [
+                {
+                    "from": "a",
+                    "text": "Hi Steven"
+                },
+                {
+                    "from": "steven",
+                    "text": "Hey there!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "a",
+                "hitler"
+            ],
+            "messages": [
+                {
+                    "from": "hitler",
+                    "text": "Yo a"
+                },
+                {
+                    "from": "a",
+                    "text": "Hey!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "b",
+                "pussyFace"
+            ],
+            "messages": [
+                {
+                    "from": "b",
+                    "text": "Hello!"
+                },
+                {
+                    "from": "pussyFace",
+                    "text": "Hi b!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "b",
+                "uglyBaby"
+            ],
+            "messages": [
+                {
+                    "from": "uglyBaby",
+                    "text": "Hey b"
+                },
+                {
+                    "from": "b",
+                    "text": "Hello!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "b",
+                "sigma"
+            ],
+            "messages": [
+                {
+                    "from": "b",
+                    "text": "Yo Sigma"
+                },
+                {
+                    "from": "sigma",
+                    "text": "Hey!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "g",
+                "hello"
+            ],
+            "messages": [
+                {
+                    "from": "g",
+                    "text": "Hi hello"
+                },
+                {
+                    "from": "hello",
+                    "text": "Hey g!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "g",
+                "jewline"
+            ],
+            "messages": [
+                {
+                    "from": "jewline",
+                    "text": "Yo g"
+                },
+                {
+                    "from": "g",
+                    "text": "Hi!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "g",
+                "boy"
+            ],
+            "messages": [
+                {
+                    "from": "g",
+                    "text": "Hey boy"
+                },
+                {
+                    "from": "boy",
+                    "text": "Hi g!"
+                },
+                {
+                    "from": "boy",
+                    "text": "hello"
+                },
+                {
+                    "from": "boy",
+                    "text": "yoyo"
+                },
+                {
+                    "from": "boy",
+                    "text": "ho"
+                },
+                {
+                    "from": "boy",
+                    "text": "hoh"
+                }
+            ]
+        },
+        {
+            "users": [
+                "v",
+                "james"
+            ],
+            "messages": [
+                {
+                    "from": "v",
+                    "text": "Hello James"
+                },
+                {
+                    "from": "james",
+                    "text": "Hi v!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "v",
+                "steven"
+            ],
+            "messages": [
+                {
+                    "from": "steven",
+                    "text": "Yo v"
+                },
+                {
+                    "from": "v",
+                    "text": "Hey!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "v",
+                "hitler"
+            ],
+            "messages": [
+                {
+                    "from": "v",
+                    "text": "Hey Hitler"
+                },
+                {
+                    "from": "hitler",
+                    "text": "Hello!"
+                }
+            ]
+        },
+        {
+            "users": [
+                "boy",
+                "hello"
+            ],
+            "messages": [
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "hello",
+                    "text": "fuck you too"
+                },
+                {
+                    "from": "boy",
+                    "text": "suck"
+                }
+            ]
+        },
+        {
+            "users": [
+                "boy",
+                "sigma"
+            ],
+            "messages": [
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "bye bye\ud83e\udd2b\ud83e\uddcf\u200d\u2642\ufe0f"
+                },
+                {
+                    "from": "sigma",
+                    "text": "hi hi \ud83d\ude10\ud83e\udd2b"
+                }
+            ]
+        },
+        {
+            "users": [
+                "boy",
+                "hitler"
+            ],
+            "messages": [
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "f"
+                },
+                {
+                    "from": "boy",
+                    "text": "f"
+                },
+                {
+                    "from": "boy",
+                    "text": "face"
+                }
+            ]
+        },
+        {
+            "users": [
+                "boy",
+                "bye"
+            ],
+            "messages": [
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                },
+                {
+                    "from": "boy",
+                    "text": "fuck you"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+/* src/css/base/_reset.css */
+@media screen and (min-width: 500px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        background: var(--color-main-bg);
+        color: var(--color-text-light);
+        overflow: hidden;
+        z-index: 4;
+    }
+}
+
+/* New: Wrapper for the whole app structure (Sidebar + Chat) */
+.main-layout {
+    display: flex;
+    flex: 0;
+    height: 100%;
+    position: relative; /* Needed for absolute positioning of settings panel */
+}

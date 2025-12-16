@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Chat App</title>
+    <link rel="stylesheet" href="./css/signup.css" />
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="title">Join the Chat 👋</h2>
+            <p class="subtitle">Create your account to start chatting</p>
+
+            <form id="signupForm" novalidate>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Choose a username"
+                        required
+                    />
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Choose a password"
+                        required
+                    />
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Repeat your password"
+                        required
+                    />
+                </div>
+
+                <!-- Error message -->
+                <div
+                    id="errorMsg"
+                    class="error-msg"
+                    aria-live="polite"
+                    style="display: none"
+                ></div>
+
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+
+            <p class="footer-text">
+                Already have an account? <a href="../login/login.html">Login here</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="./js/signup.js"></script>
+</body>
+</html>
