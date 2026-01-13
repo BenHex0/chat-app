@@ -1,57 +1,65 @@
 <?php
-header('Content-Type: application/json');
+require_once 'database.php';
 
-if (isset($_POST["login"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
-        header('Location: /Chat-App/login.php?error=emptyfields');
-        exit;
-    } else {
-        // fake database login
-        $usersFile = __DIR__ . '/../fake_database/users.json';
+if (empty($username) || empty($password)) {
+    header("Location: ../login.php?error=emptyfields");
+    exit;
+}
 
-        $usersJson = file_get_contents($usersFile);
-        $users = json_decode($usersJson, true);
+// get the user id
+$user_id = getUserID($username);
 
-        if (!$users || !isset($users['accounts'])) {
-            echo json_encode(["status" => false, "message" => "No users found"]);
-            exit;
-        }
+// check if the username exists
+function checkUsername($username)
+{
+    if (empty($username))
+        return false;
 
-        // gonna replace this with a database later
-        /////////////////////////////////////////////////////////////
-        foreach ($users['accounts'] as $i => $acc) {
-            if (!isset($acc['username']))
-                continue;
-            if ($acc['username'] !== $username)
-                continue;
-
-            $stored = $acc['password'] ?? '';
-
-            // If stored is a bcrypt/hash, use password_verify; otherwise compare plaintext
-            $ok = false;
-            if ($stored !== '' && password_verify($password, $stored)) {
-                $ok = true;
-            } elseif ($stored === $password) {
-                $ok = true;
-            }
-
-            if ($ok) {
-                // set session for future server-side checks
-                if (session_status() === PHP_SESSION_NONE)
-                    session_start();
-                // store user id when you use database
-                $_SESSION['username'] = $username;
-                header('Location: /Chat-App/app.php');
-                exit;
-            }
-        }
-        /////////////////////////////////////////////////////////////
-
-        header('Location: /Chat-App/login.php?error=wrongcredentials');
-        exit;
-
+    $sql = "SELECT username
+            FROM users 
+            WHERE username = '{$username}'";
+    $result = runQuery($sql);
+    $row = mysqli_fetch_assoc($result);
+  
+    if($row['username'] !== $username) {
+        return false;
     }
+
+    return true;
+}
+
+// check if the password is correct
+function checkPassword($username, $password)
+{
+    $sql = "SELECT password as pwd
+            FROM users 
+            WHERE username = '{$username}'";
+    $result = runQuery($sql);
+
+    if (mysqli_num_rows($result) === 0) {
+        return false;
+    }
+
+    $row = mysqli_fetch_assoc(result: $result);
+
+    if ($row['pwd'] === $password) {
+        return true;
+    }
+    return false;
+}
+
+closeConnection();
+
+if (checkUsername($username) && checkPassword($username, $password)) {
+    session_start();
+    $_SESSION['username'] = $username;
+    $_SESSION['user_id'] = $user_id;
+    header("Location: ../app.php");
+    exit;
+} else {
+    header("Location: ../login.php?error=wrongcredentials");
+    exit;
 }

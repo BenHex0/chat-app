@@ -1,46 +1,50 @@
 <?php
-header('Content-Type: application/json');
+require_once 'database.php';
+session_start();
 
-$messagesFile = __DIR__ . '/../fake_database/messages.json';
-$postData = json_decode(file_get_contents('php://input'), true);
+// Read JSON input
+$input = json_decode(file_get_contents('php://input'), true);
 
-if (!isset($postData['from']) || !isset($postData['to']) || !isset($postData['text'])) {
-    echo json_encode($postData);
-    // echo json_encode(["status" => false, "message" => "Invalid input"]);
+if (
+    !isset($input['to']) ||
+    !isset($input['text'])
+) {
+    echo json_encode(["status" => false, "message" => "Invalid input"]);
     exit;
 }
 
-// Load existing messages
-$messagesData = file_get_contents($messagesFile);
-$messages = json_decode($messagesData, true);
-if (!$messages || !isset($messages['conversations']))
-    $messages = ["conversations" => []];
+$currentUserID = $_SESSION['user_id'];
+$toUsername = $input['to'];
+$text = $input['text'];
 
-// Find conversation
-$conversation = null;
-foreach ($messages['conversations'] as &$c) {
-    if (in_array($postData['from'], $c['users']) && in_array($postData['to'], $c['users'])) {
-        $conversation = &$c;
-        break;
-    }
-}
+// Get contact ID
+$contactId = getUserID($toUsername);
 
-// If conversation doesn't exist, create it
-if (!$conversation) {
-    $conversation = [
-        "users" => [$postData['from'], $postData['to']],
-        "messages" => []
-    ];
-    $messages['conversations'][] = $conversation;
-}
+// Check if chat already exists
+$sql = "SELECT c.id AS chat_id
+        FROM chats c
+        JOIN chat_users cu1 
+        ON c.id = cu1.chat_id AND cu1.user_id = '{$currentUserID}'
+        JOIN chat_users cu2 
+        ON c.id = cu2.chat_id AND cu2.user_id = '{$contactId}'
+        LIMIT 1";
 
-// Add new message
-$conversation['messages'][] = [
-    "from" => $postData['from'],
-    "text" => $postData['text']
-];
+$result = runQuery($sql);
 
-// Save back to JSON
-file_put_contents($messagesFile, json_encode($messages, JSON_PRETTY_PRINT));
+if ($result && mysqli_num_rows($result) > 0) {
+    // Chat exists
+    $chatId = mysqli_fetch_assoc($result)['chat_id'];
+} 
 
-echo json_encode(["status" => true, "message" => "Message saved"]);
+// Insert message
+$sql = "INSERT INTO messages (chat_id, sender_id, content)
+        VALUES ('{$chatId}', '{$currentUserID}', '{$text}')";
+
+runQuery($sql);
+
+echo json_encode([
+    "status" => true,
+    "message" => "Message saved"
+]);
+
+closeConnection();

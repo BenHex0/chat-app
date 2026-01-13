@@ -5,8 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $username = $_SESSION['username'] ?? null;
+$profilePicture = $_SESSION['image'] ?? null;
 
-echo json_encode(["username" => $username]);
+echo json_encode(["username" => $username, "image" => $profilePicture]);
 exit;
-
-?>

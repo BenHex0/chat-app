@@ -11,7 +11,7 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION["username"])) {
+    if (!empty($_SESSION["username"])) {
         header("Location: app.php");
         exit;
     }
@@ -34,10 +34,10 @@
     ?>
     <div class="login-container">
         <div class="login-card">
-            <h2 class="title">Welcome Back 👋</h2>
+            <h2 class="title">Welcome Back</h2>
             <p class="subtitle">Log in to continue chatting</p>
 
-            <form id="loginForm" action="/Chat-App/api/login.php" method="post" novalidate>
+            <form id="loginForm" action="api/login.php" method="post" novalidate>
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required />
@@ -60,12 +60,8 @@
             </form>
 
             <p class="footer-text">
-                Test accounts:
-                <br /><strong>testuser / password123</strong> <br /><strong>alice / alice123</strong>
-            </p>
-            <p class="footer-text">
                 You dont have an account?
-                <a href="signup.php">Sign Up here</a>
+                <a href="signup.php">Signup here</a>
             </p>
         </div>
     </div>

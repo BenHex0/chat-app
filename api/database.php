@@ -24,6 +24,23 @@ function closeConnection() {
 function runQuery($sql) {
     $conn = startConnection();
     $result = mysqli_query($conn, $sql);
-    closeConnection();
     return $result;
+}
+
+// get the user id
+function getUserID($username)
+{
+    if (empty($username))
+        return null;
+
+    $sql = "SELECT id AS id
+            FROM users
+            WHERE username = '{$username}'
+            LIMIT 1";
+    $row = runQuery($sql);
+    if (mysqli_num_rows($row) === 0) {
+        return null;
+    }
+    $result = mysqli_fetch_assoc($row);
+    return $result["id"];
 }

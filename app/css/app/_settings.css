@@ -30,6 +30,8 @@
     width: 80px;
     height: 80px;
     font-size: 2rem;
+    background-size: cover;
+    background-position: center;
 }
 
 .settings-section {
@@ -47,6 +49,33 @@
     background: var(--color-hover-bg);
 }
 
+/* --- Profile Picture Update Styles --- */
+.change-pic-btn {
+    width: 100%;
+    padding: 15px 16px;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.change-pic-btn:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Ensure the large profile picture stays centered */
+.settings-panel .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .logout-btn {
     width: 100%;
     padding: 15px 16px;
@@ -62,4 +91,15 @@
 
 .logout-btn:hover {
     background: rgba(255, 107, 107, 0.1);
+}
+
+.profile-preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#previewPic {
+    background-size: cover;
+    background-position: center;
 }

@@ -1,13 +1,12 @@
 <?php
-header('Content-Type: application/json');
 require_once 'database.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// send back error as GET
+
 if (empty($username) || empty($password)) {
-    header("Location: ../signup.php?error=emptyfields");
+    header("Location: ../login.php?error=emptyfields");
     exit;
 }
 
@@ -19,8 +18,10 @@ function usernameExists($username)
             FROM users 
             WHERE username = '{$username}'";
     $row = runQuery($sql);
-    $result = mysqli_fetch_assoc($row);
-    return $result['user'] > 0;
+   if (mysqli_num_rows($row) === 0) {
+        return false;
+    }
+    return true;
 }
 // insert new user
 function insertUser($username, $password)
@@ -30,6 +31,7 @@ function insertUser($username, $password)
     runQuery($sql);
 }
 
+closeConnection();
 
 if (usernameExists($username)) {
     header("Location: ../signup.php?error=usernameexists");

@@ -11,10 +11,10 @@
 <body>
     <?php
     session_start();
-    // if (isset($_SESSION["username"])) {
-    //     header("Location: app.php");
-    //     exit;
-    // }
+    if (!empty($_SESSION["username"])) {
+        header("Location: app.php");
+        exit;
+    }
 
     $errorCode = $_GET['error'] ?? '';
     $errorMsg = '';
@@ -32,7 +32,7 @@
 
     <div class="login-container">
         <div class="login-card">
-            <h2 class="title">Join the Chat 👋</h2>
+            <h2 class="title">Join the Chat</h2>
             <p class="subtitle">Create your account to start chatting</p>
 
             <form id="signupForm" novalidate action="api/signup.php" method="post">
@@ -56,7 +56,7 @@
             </form>
 
             <p class="footer-text">
-                Already have an account? <a href="../login.php">Login here</a>
+                Already have an account? <a href="login.php">Login here</a>
             </p>
         </div>
     </div>

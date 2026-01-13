@@ -16,6 +16,8 @@
     height: 48px;
     background-color: var(--color-accent);
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
 }
 
 /* --- Sidebar Header --- */
@@ -49,11 +51,7 @@
 }
 
 /* --- Chat List --- */
-.chat-list {
-    flex: 1;
-    overflow-y: auto;
-}
-
+/* --- Chat List Item (Modified) --- */
 .chat-item {
     display: flex;
     align-items: center;
@@ -63,16 +61,54 @@
     padding: 15px;
     cursor: pointer;
     transition: background 0.2s;
+    /* Added position relative so the delete button can align properly */
+    position: relative; 
 }
 
 .chat-item:hover {
     background: var(--color-hover-bg);
 }
 
+/* Ensure the label takes up the available space so the button pushes to the end */
+.chat-item .username {
+    flex: 1;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* --- The New Delete Button --- */
+.delete-chat-btn {
+    padding: 4px 8px;
+    background-color: transparent;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show button when the chat-item is hovered */
+.chat-item:hover .delete-chat-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.delete-chat-btn:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Adjusting the profile picture within the list */
 .chat-list .chat-item .profile-picture {
     width: 38px;
     height: 38px;
     min-width: 38px;
-    background-color: var(--color-hover-bg); /* Muted color for contacts */
+     background-color: var(--color-hover-bg); 
     border: none;
+    font-size: 0.9rem;
 }

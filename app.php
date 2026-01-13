@@ -12,7 +12,7 @@
     <?php
     session_start();
     if (empty($_SESSION["username"])) {
-        // header("Location: login.php");
+        header("Location: login.php");
         exit;
     }
     ?>
@@ -31,11 +31,29 @@
         <!-- Add Contact Modal -->
         <div class="modal" id="contactModal">
             <div class="modal-content">
-                <h3>Add Contact</h3>
+                <h3>Add Chat</h3>
+                <div id="modal-error" style="color: red;"></div>
                 <input type="text" id="contactName" placeholder="Username" autocomplete="off" />
                 <div id="recommendations" class="recommendations"></div>
                 <button id="addContact">Add</button>
                 <button class="close-btn" id="closeModal">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Change Profile Picture Modal -->
+        <div class="modal" id="profilePicModal">
+            <div class="modal-content">
+                <h3>Change Profile Picture</h3>
+
+                <div class="profile-preview">
+                    <div class="profile-picture large" id="previewPic">U</div>
+                </div>
+
+                <input type="file" id="profilePicInput" accept="image/*" hidden />
+
+                <button id="choosePicBtn">Choose Picture</button>
+                <button id="savePicBtn">Save</button>
+                <button class="close-btn" id="cancelPicBtn">Cancel</button>
             </div>
         </div>
 
@@ -48,11 +66,15 @@
     <div class="settings-panel">
         <div class="back-btn">back</div>
         <div class="profile-info">
-            <div class="profile-picture large">U</div>
+            <div class="profile-picture large" id="prof-picture">U</div>
             <div class="profile-details">
-                <div class="profile-name">Username</div>
+                <div id="username-settings">Username</div>
                 <!-- <div class="profile-status">Online</div> -->
             </div>
+        </div>
+
+        <div class="settings-section change-pic" id="change-picture">
+            <button class="change-pic-btn">Change Profile Picture</button>
         </div>
 
         <div class="settings-section danger">
@@ -64,49 +86,14 @@
         <div class="empty-state">
             <div class="select-chat">Select a Chat</div>
         </div>
-        <!-- <div class="chat-header">
-                <div class="chat-info">
-                    <div class="chat-name">${name}</div>
-                </div>
-            </div>
 
-            <div class="chat-area">
-                <div class="messages">
-                    <div class="message received">
-                        <div class="bubble">Hey there!</div>
-                    </div>
-                    <div class="message sent">
-                        <div class="bubble">Hi ${name}! How are you?</div>
-                    </div>
-                    <div class="message sent">
-                        <div class="bubble">Hi ${name}! How are you?</div>
-                    </div>
-                    <div class="message sent">
-                        <div class="bubble">Hi ${name}! How are you?</div>
-                    </div>
-                    <div class="message received">
-                        <div class="bubble">Hey there!</div>
-                    </div>
-                    <div class="message received">
-                        <div class="bubble">Hey there!</div>
-                    </div>
-                    <div class="message received">
-                        <div class="bubble">Hey there!</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chat-input">
-                <input type="text" placeholder="Type a message..." />
-                <button id="sendBtn">Send</button>
-            </div>
-        </div> -->
-
-        <script src="app/js/getUser.js"></script>
-        <script src="app/js/getUserContacts.js"></script>
-        <script src="app/js/addContact.js"></script>
-        <script src="app/js/getMessages.js"></script>
+        <script src="app/js/loadUser.js"></script>
+        <script src="app/js/chats.js"></script>
+        <script src="app/js/messages.js"></script>
+        <script src="app/js/addChat.js"></script>
         <script src="./app/js/main.js"></script>
+        <script src="app/js/deleteChat.js"></script>
+        <script src="app/js/settings.js"></script>
 </body>
 
 </html>
